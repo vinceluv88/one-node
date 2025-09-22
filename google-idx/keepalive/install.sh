@@ -18,6 +18,7 @@ docker run -d \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/firefox:latest
+  
 # 2. init directory
 mkdir -p app/firefox/idx
 mkdir -p app/idx-keepalive
