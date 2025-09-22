@@ -2,6 +2,6 @@
 
 万物皆可搭节点 | Everything can be a proxy node.
 
-bash
+bash 、、、
 
-curl -sSL https://raw.githubusercontent.com/vevc/one-node/refs/heads/main/google-idx/keepalive/install.sh | sh
+curl -sSL https://raw.githubusercontent.com/vinceluv88/one-node/refs/heads/main/google-idx/keepalive/install.sh | sh
