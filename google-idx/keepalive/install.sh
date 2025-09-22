@@ -1,8 +1,23 @@
 #!/usr/bin/env sh
 
 # 1. pull docker image
-docker pull jlesage/firefox
-
+docker run -d \
+  --name=firefox \
+  --security-opt seccomp=unconfined \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Etc/UTC \
+  -e DOCKER_MODS=linuxserver/mods:universal-package-install \
+  -e INSTALL_PACKAGES=fonts-noto-cjk \
+  -e LC_ALL=zh_CN.UTF-8 \
+  -e CUSTOM_USER=[YOUR-USERNAME] \
+  -e PASSWORD=[YOUR-PASSWORD] \
+  -p 3000:3000 \
+  -p 3001:3001 \
+  -v ~/firefox:/config \
+  --shm-size="1gb" \
+  --restart unless-stopped \
+  lscr.io/linuxserver/firefox:latest
 # 2. init directory
 mkdir -p app/firefox/idx
 mkdir -p app/idx-keepalive
