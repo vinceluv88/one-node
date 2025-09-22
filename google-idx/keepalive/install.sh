@@ -10,15 +10,16 @@ docker run -d \
   -e DOCKER_MODS=linuxserver/mods:universal-package-install \
   -e INSTALL_PACKAGES=fonts-noto-cjk \
   -e LC_ALL=zh_CN.UTF-8 \
-  -e CUSTOM_USER=[YOUR-USERNAME] \
-  -e PASSWORD=[YOUR-PASSWORD] \
+  -e CUSTOM_USER=admin \
+  -e PASSWORD=123456 \
+  -e MOZ_DISABLE_AUTO_UPDATE=1 \
   -p 3000:3000 \
   -p 3001:3001 \
   -v ~/firefox:/config \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/firefox:latest
-  
+
 # 2. init directory
 mkdir -p app/firefox/idx
 mkdir -p app/idx-keepalive
