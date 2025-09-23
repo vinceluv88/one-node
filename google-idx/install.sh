@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 PORT="${PORT:-8080}"
-UUID="${UUID:-2584b733-9095-4bec-a7d5-62b473540f7a}"
+UUID="${UUID:-a6c44bc8-3c3b-4881-8bf1-7b96ad586fdb}"
 
 # 1. init directory
 mkdir -p app/xray
