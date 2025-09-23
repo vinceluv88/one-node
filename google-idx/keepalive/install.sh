@@ -1,24 +1,7 @@
 #!/usr/bin/env sh
 
 # 1. pull docker image
-docker run -d \
-  --name=firefox \
-  --security-opt seccomp=unconfined \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Etc/UTC \
-  -e DOCKER_MODS=linuxserver/mods:universal-package-install \
-  -e INSTALL_PACKAGES=fonts-noto-cjk \
-  -e LC_ALL=zh_CN.UTF-8 \
-  -e CUSTOM_USER=admin \
-  -e PASSWORD=123456 \
-  -e MOZ_DISABLE_AUTO_UPDATE=1 \
-  -p 3000:3000 \
-  -p 3001:3001 \
-  -v ~/firefox:/config \
-  --shm-size="1gb" \
-  --restart unless-stopped \
-  lscr.io/linuxserver/firefox:latest
+docker pull jlesage/firefox
 
 # 2. init directory
 mkdir -p app/firefox/idx
